@@ -15,13 +15,14 @@
   .site-head { display: flex; align-items: center; gap: 14px; max-width: 1180px; margin: 0 auto; padding: 14px 20px; }
   .site-head img { height: 56px; width: auto; }
   .site-head .t { font-family: "Secular One", "Assistant", Arial, sans-serif; font-size: 20px; line-height: 1.2; }
-  .site-head .t small { display: block; font-family: "Assistant", Arial, sans-serif; font-size: 14px; color: #4a6e6a; }
+  .site-head .t span { display: block; }
+  .site-head .top { margin-inline-start: auto; }
+  @media (max-width: 720px) { .site-head { flex-wrap: wrap; } .site-head .top { flex: 1 0 100%; } }
   main { max-width: 1180px; margin: 0 auto; padding: 0 12px 40px; }
   .site-foot { border-top: 1px solid #dbe5e1; max-width: 1180px; margin: 0 auto; padding: 16px 20px 28px; font-size: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
   .site-foot a { color: var(--ink); }
   /* תצוגה כהה: לפי הבחירה בפורטל (נשמרת במכשיר), או לפי המכשיר */
   html[data-ml-theme="dark"] { --ink: #cfe5e1; --paper: #141817; color-scheme: dark; }
-  html[data-ml-theme="dark"] .site-head .t small { color: #9fbdb7; }
   html[data-ml-theme="dark"] .site-head img { background: rgba(255,255,255,.85); border-radius: 12px; padding: 4px; }
   html[data-ml-theme="dark"] .site-foot { border-top-color: #2e3633; }
 </style>
@@ -29,9 +30,10 @@
 </head>
 <body>
 <header class="site-head">
-  <a href="https://www.educare.co.il" aria-label="המרכז לחינוך קשוב ואכפתי"><img src="logo.png" alt="המרכז לחינוך קשוב ואכפתי"></a>
+  <img src="logo.png" alt="המרכז לחינוך קשוב ואכפתי">
   <img src="logo-program.png" alt="המרכז לפסיכותרפיה מבוססת מיינדפולנס">
-  <div class="t">פורטל משתתפים<small>התוכנית לפסיכותרפיה מבוססת מיינדפולנס</small></div>
+  <div class="t"><span>התוכנית לפסיכותרפיה מבוססת מיינדפולנס</span><span>פורטל משתתפים</span></div>
+  <div id="mblms-top" class="top" aria-label="החשבון והתצוגה"></div>
 </header>
 <main>
 <div id="mblms" data-api="https://script.google.com/macros/s/AKfycbzai0laT9WQBpjHuwGvB47g45nh-52D1zY4lgQbillgLKZdJJAC1oZfMILifj26CwY/exec" dir="rtl" lang="he" style="min-height:460px"><div style="padding:70px 16px;text-align:center;font-size:17px;color:#556C51">טוען את האזור האישי…</div></div><script data-no-optimize="1" data-no-defer="1" data-cfasync="false">(function(){var r=document.getElementById("mblms");if(!r||r.getAttribute("data-on"))return;r.setAttribute("data-on","1");var A=r.getAttribute("data-api"),K="mblms_bundle",c=null,m=false;window.MBLMS_API=A;function go(h){if(m)return;m=true;var t=document.createElement("div");t.innerHTML=h;var s=[].slice.call(t.querySelectorAll("script"));s.forEach(function(x){x.parentNode.removeChild(x)});r.innerHTML="";while(t.firstChild)r.appendChild(t.firstChild);s.forEach(function(x){var n=document.createElement("script");n.text=x.text;r.appendChild(n)})}try{c=JSON.parse(localStorage.getItem(K)||"null")}catch(e){}if(c&&c.html)go(c.html);function fx(n){var o={method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"bundle",have:(c&&c.version)||""}),cache:"no-store"};if(window.AbortController){var ac=new AbortController();o.signal=ac.signal;setTimeout(function(){ac.abort()},n?15000:9000)}return fetch(A+(A.indexOf("?")>=0?"&":"?")+"a=bundle&t="+Date.now(),o).then(function(x){return x.json()}).then(function(j){if(!(j&&j.ok))throw 0;return j}).catch(function(e){if(n<2)return fx(n+1);throw e})}fx(0).then(function(j){if(j&&j.ok&&j.html){try{localStorage.setItem(K,JSON.stringify({version:j.version,html:j.html}))}catch(e){}go(j.html)}else if(!m){if(c&&c.html)go(c.html);else throw 0}}).catch(function(){if(!m)r.innerHTML='<div style="padding:70px 16px;text-align:center;font-size:17px">לא הצלחנו לטעון את האזור האישי. בדקו את החיבור לאינטרנט ונסו לרענן.</div>'});})();</script>
